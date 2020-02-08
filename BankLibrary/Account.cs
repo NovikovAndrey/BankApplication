@@ -48,7 +48,7 @@ namespace BankLibrary
         }
         protected virtual void OnCalculated(AccountEventArgs accountEventArgs)
         {
-            CallEvent(accountEventArgs, Closed);
+            CallEvent(accountEventArgs, Calculated);
         }
 
         public virtual void Put(decimal sum)
@@ -89,7 +89,7 @@ namespace BankLibrary
         protected internal virtual void Calculate()
         {
             Sum += (Sum * Percentage / 100);
-            OnCalculated(new AccountEventArgs($"Начислены проценты в размере {Sum * Percentage / 100}", Sum * Percentage / 100));
+            OnCalculated(new AccountEventArgs($"Начислены проценты в размере {Math.Round(Sum * Percentage / 100, 2)}", Math.Round(Sum * Percentage / 100, 2)));
         }
     }
 }

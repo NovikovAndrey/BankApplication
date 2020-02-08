@@ -6,10 +6,10 @@ namespace BankLibrary
 {
     public enum AccountType
     {
-        Ordinary,
-        Deposit
+        Ordinary = 1,
+        Deposit= 2
     }
-    class Bank<T> where T:Account
+    public class Bank<T> where T:Account
     {
         T[] accounts;
         public string Name { get; private set; }
