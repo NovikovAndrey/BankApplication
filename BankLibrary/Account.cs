@@ -72,11 +72,11 @@ namespace BankLibrary
             }
             return result;
         }
-        public virtual void Open()
+        protected internal virtual void Open()
         {
             OnOpen(new AccountEventArgs($"Открытие счета номер {Id}", Sum));
         }
-        public virtual void Close()
+        protected internal virtual void Close()
         {
             if (Sum > 0)
                 Withdraw(Sum);
